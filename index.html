@@ -13,15 +13,39 @@
     <div id="root"></div>
 </body>
 
-<script>
+<script type="text/babel">  // babel middleman (converts jsx to javascript code) (3rd link)
 
     let root = document.getElementById("root");
 
-    let ele = React.createElement("h1", {  // first link se 
-        children : ["Hello"]
-    });
+    // let ele = React.createElement("h1", {  // first link se 
+    //     children : ["Hello"]
+    // });
 
-    ReactDOM.render(ele, root); // second link se
+    // ReactDOM.render(ele, root); // second link se
+
+    // JSX
+    function Element(){  // functional component bna dia
+        return (
+            <h1> Hello World </h1>
+        )
+    }
+
+    // functional component(Element)  reusing   
+    function Main(){  // Main is funtional component
+       return (
+            <React.Fragment>
+                <Element/>
+                <Element/>
+                <Element/>
+                <Element/>
+                <Element/>
+            </React.Fragment>
+
+        
+       )
+    }
+
+    ReactDOM.render(<Main/>, root)  // <Element/> => way to call the functional component
 
 </script>
 
