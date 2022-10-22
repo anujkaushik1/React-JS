@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">  // babel middleman (converts jsx to javascript code) (3rd link)
+
+    let root = document.getElementById("root");
+
+    // let ele = React.createElement("h1", {  // first link se 
+    //     children : ["Hello"]
+    // });
+
+    // ReactDOM.render(ele, root); // second link se
+
+
+
+    // JSX
+    function Element({name = 'default'}){  // functional component bna dia
+
+        
+        console.log(name);   // data coming
+
+        return (
+             
+            <>
+             <h1> Hello World {name} </h1>
+            </>
+            
+        )
+    }
+
+    // functional component(Element)  reusing   
+    function Main(){  // Main is funtional component
+        // data passing to element function component
+       return (
+            <React.Fragment>
+                <Element name = "Anuj"/>    
+                <Element/>
+                <Element/>
+                <Element/>
+                <Element/>
+            </React.Fragment>
+
+        
+       )
+    }
+
+    ReactDOM.render(<Main/>, root)  // <Element/> => way to call the functional component
+    // yeh 2 baar call nai ho skta => agar esa krenge toh neche wala chlega bs
+</script>
+
+</html>
