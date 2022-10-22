@@ -23,18 +23,29 @@
 
     // ReactDOM.render(ele, root); // second link se
 
+
+
     // JSX
-    function Element(){  // functional component bna dia
+    function Element({name = 'default'}){  // functional component bna dia
+
+        
+        console.log(name);   // data coming
+
         return (
-            <h1> Hello World </h1>
+             
+            <>
+             <h1> Hello World {name} </h1>
+            </>
+            
         )
     }
 
     // functional component(Element)  reusing   
     function Main(){  // Main is funtional component
+        // data passing to element function component
        return (
             <React.Fragment>
-                <Element/>
+                <Element name = "Anuj"/>    
                 <Element/>
                 <Element/>
                 <Element/>
@@ -46,7 +57,7 @@
     }
 
     ReactDOM.render(<Main/>, root)  // <Element/> => way to call the functional component
-
+    // yeh 2 baar call nai ho skta => agar esa krenge toh neche wala chlega bs
 </script>
 
 </html>
